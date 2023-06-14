@@ -1,0 +1,35 @@
+
+body {
+    background-color: black;
+}
+.tile {
+    opacity: 0.95;
+    position: relative;
+    width:20px;
+    height:20px;
+}
+
+.tile:hover {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+.inner {
+    margin-top:30px;
+    padding:10px;
+    min-width:1240px;
+}
+
+#map, #newMap {
+    width: 600px;
+    float: left;
+    padding: 20px;
+}
+
+#copy {
+    position:absolute;
+    top:0;
+    right:0;
+    padding:5px;
+    margin:20px;
+}

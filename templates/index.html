@@ -1,0 +1,152 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/styles/styles.css" />
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+    <link rel="preload" href="../static/img/pacman/pacman_left.svg" as="image">
+    <link rel="preload" href="../static/img/pacman/pacman_right.svg" as="image">
+    <link rel="preload" href="../static/img/pacman/pacman_up.svg" as="image">
+    <link rel="preload" href="../static/img/pacman/pacman_down.svg" as="image">
+    <link rel="preload" href="../static/img/pacman/pacman_death.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_left.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_right.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_up.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_down.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_left_annoyed.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_right_annoyed.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_up_annoyed.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_down_annoyed.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_left_angry.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_right_angry.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_up_angry.svg" as="image">
+    <link rel="preload" href="../static/img/blinky/blinky_down_angry.svg" as="image">
+    <link rel="preload" href="../static/img/pinky/pinky_left.svg" as="image">
+    <link rel="preload" href="../static/img/pinky/pinky_right.svg" as="image">
+    <link rel="preload" href="../static/img/pinky/pinky_up.svg" as="image">
+    <link rel="preload" href="../static/img/pinky/pinky_down.svg" as="image">
+    <link rel="preload" href="../static/img/inky/inky_left.svg" as="image">
+    <link rel="preload" href="../static/img/inky/inky_right.svg" as="image">
+    <link rel="preload" href="../static/img/inky/inky_up.svg" as="image">
+    <link rel="preload" href="../static/img/inky/inky_down.svg" as="image">
+    <link rel="preload" href="../static/img/clyde/clyde_left.svg" as="image">
+    <link rel="preload" href="../static/img/clyde/clyde_right.svg" as="image">
+    <link rel="preload" href="../static/img/clyde/clyde_up.svg" as="image">
+    <link rel="preload" href="../static/img/clyde/clyde_down.svg" as="image">
+    <link rel="preload" href="../static/img/eyes/eyes_left.svg" as="image">
+    <link rel="preload" href="../static/img/eyes/eyes_right.svg" as="image">
+    <link rel="preload" href="../static/img/eyes/eyes_up.svg" as="image">
+    <link rel="preload" href="../static/img/eyes/eyes_down.svg" as="image">
+    <link rel="preload" href="../static/img/scared/scared_blue.svg" as="image">
+    <link rel="preload" href="../static/img/scared/scared_white.svg" as="image">
+    
+</head>
+<script type='module' src="../static/js/script.js"></script>
+<script type='module' src="../static/js/scoreboard.js"></script>
+<script type='module' src="../static/js/ws.js"></script>
+
+<body>
+    <div style="position:absolute; width:99vw; overflow: hidden;">
+        <div class="inner">
+            <div id="score">0</div>
+            <div id="player">1 UP</div>
+            <div id="level">Level: 1</div>
+            <div id="time">00:00</div>
+            <div id="fps">FPS: 0</div>
+            <div id="high-score">HIGH&nbsp;&nbsp;SCORE: 0</div>
+            <button id="pause" title="pause">⏸</button>
+            <div id="map"></div>
+            <img src="../static/img/ready.png" id="ready-text"/>
+            <img src="../static/img/gameOver.png" id="game-over-text"/>
+            <div id="fruit"></div>
+            <div id="dots"></div>
+            <div id="pacman"></div>
+            <div id="blinky" class="ghost"></div>
+            <div id="pinky" class="ghost"></div>
+            <div id="inky" class="ghost"></div>
+            <div id="clyde" class="ghost"></div>
+            <div id="fruit-bonus"></div>
+            <div id="bonus">200</div>
+            <div id="pause-menu" class="paused-text" style="visibility:hidden; overflow: hidden;">
+                GAME IS PAUSED
+                <div style="display:flex; text-align:center; margin-left:-7px; margin-top:10px">
+                    <button id="continue">Continue (P)</button>
+                    <button id="restart">Restart (R)</button>
+                </div>
+            </div>
+            <div id="name-form">
+                Pac-Man's adventure has come to a close, but his legacy lives on. His tenacity and skill have earned him a place in the record books, and his legend will continue to inspire gamers for years to come. As for Pac-Man himself, he will always be remembered as a true hero of the gaming world. Congratulations on your achievements, and thank you for playing!
+                <br><br>PLEASE ENTER YOUR NAME:
+                <input id="username" type="text" required maxlength="20"/>
+                <button id="save-score">SUBMIT</button>
+            </div>
+            <div id="start-background">
+                <div id="start-dialog">
+                    <p>
+                        Welcome to Pac-Man! In this classic arcade game, you'll take control of the eponymous Pac-Man as he navigates a maze, eating pellets and avoiding ghosts. With each level, the maze gets more complicated and the ghosts get faster and more aggressive. Can you help Pac-Man clear all the pellets and complete every level? Get ready to chomp your way to victory!
+                    </p>
+                </div>
+            </div>
+            <button id="start">START (S)</button>
+            <div id="story-background">
+                <div id="story-dialog">
+                    <p id="story-text">
+                    </p>
+                    <button id="story-ok">OK</button>
+                </div>
+            </div>
+            <div style="position:relative; display:flex">
+                <div id="life1" class="lives"></div>
+                <div id="life2" class="lives"></div>
+                <div id="life3" class="lives"></div>
+            </div>
+        </div>
+        <div class="scoreboard">
+            <h1>LEADERBOARD</h1>
+            <table id="scoreboard-table">
+                <thead>
+                    <th>RANK</th>
+                    <th>NAME</th>
+                    <th>SCORE</th>
+                    <th>TIME</th>
+                </thead>
+                <tbody>
+                    <tr id="row1">
+                        <td id="rank1"></td>
+                        <td id="name1"></td>
+                        <td id="score1"></td>
+                        <td id="time1"></td>
+                    </tr>
+                    <tr id="row2">
+                        <td id="rank2"></td>
+                        <td id="name2"></td>
+                        <td id="score2"></td>
+                        <td id="time2"></td>
+                    </tr>
+                    <tr id="row3">
+                        <td id="rank3"></td>
+                        <td id="name3"></td>
+                        <td id="score3"></td>
+                        <td id="time3"></td>
+                    </tr>
+                    <tr id="row4">
+                        <td id="rank4"></td>
+                        <td id="name4"></td>
+                        <td id="score4"></td>
+                        <td id="time4"></td>
+                    </tr>
+                    <tr id="row5">
+                        <td id="rank5"></td>
+                        <td id="name5"></td>
+                        <td id="score5"></td>
+                        <td id="time5"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="paginator">
+                <button id="prev-page">← </button>
+                <span id="page">Page 1/1</span>
+                <button id="next-page"> →</button>
+            </div> 
+            <div id="congrats">CONGRATS, YOU ARE IN TOP 58%</div>
+            <button id="scoreboard-start">START A NEW GAME (R)</button>
+        </div>
+    </div>
+</body>
